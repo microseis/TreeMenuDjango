@@ -1,0 +1,12 @@
+
+<p>Menu:</p>
+
+{% for node in nodes %}
+    {% for item in node %}
+        {% if item.1  == request.path  %}
+            <li> {{ item.0.menu.title }} - {{ item.0.title }} </li>
+        {% else %}
+            <li> <a href="{{ item.0.url }}">{{ item.0.menu.title }} - {{ item.0.title }} </a></li>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
